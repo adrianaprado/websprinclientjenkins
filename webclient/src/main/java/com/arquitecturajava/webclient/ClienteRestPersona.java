@@ -16,7 +16,7 @@ public class ClienteRestPersona {
 	@RequestMapping("/personascliente")
 	public List<PersonaDTO> listaPersonas() {
 		RestTemplate plantilla = new RestTemplate();
-		ResponseEntity<PersonaDTO[]> lista = plantilla.getForEntity("http://localhost:8083/personas", PersonaDTO[].class);
+		ResponseEntity<PersonaDTO[]> lista = plantilla.getForEntity("http://springservidor:8083/personas", PersonaDTO[].class);
 		PersonaDTO[] nuevaLista = lista.getBody();
 		return Arrays.asList(nuevaLista);
 	}
